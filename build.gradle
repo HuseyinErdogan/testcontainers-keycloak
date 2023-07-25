@@ -32,6 +32,10 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+test {
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
+}
 
 // If needed, you can add other configurations (e.g., sourcesJar, javadoc, etc.) here.
 
