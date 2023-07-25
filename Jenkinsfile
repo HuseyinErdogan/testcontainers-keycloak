@@ -27,9 +27,6 @@ pipeline {
             yaml pod
         }
     }
-    options {
-        skipStagesAfterUnstable()
-    }
     stages {
         stage('Test') {
             steps {
