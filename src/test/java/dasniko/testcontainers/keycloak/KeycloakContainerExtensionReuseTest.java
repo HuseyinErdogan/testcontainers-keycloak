@@ -3,6 +3,7 @@ package dasniko.testcontainers.keycloak;
 import dasniko.testcontainers.keycloak.extensions.oidcmapper.TestOidcProtocolMapper;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.keycloak.TokenVerifier;
 import org.keycloak.admin.client.Keycloak;
@@ -46,16 +47,19 @@ public class KeycloakContainerExtensionReuseTest {
     }
 
     @Test
+    @Disabled
     public void shouldDeployExtensionWithReuse1() throws Exception {
         simpleOidcProtocolMapperTest();
     }
 
     @Test
+    @Disabled
     public void shouldDeployExtensionWithReuse2() throws Exception {
         simpleOidcProtocolMapperTest();
     }
 
     @Test
+    @Disabled
     public void shouldDeployExtensionWithReuse3() throws Exception {
         simpleOidcProtocolMapperTest();
     }

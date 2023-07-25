@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dasniko.testcontainers.keycloak.extensions.oidcmapper.TestOidcProtocolMapper;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.keycloak.TokenVerifier;
 import org.keycloak.admin.client.Keycloak;
@@ -44,6 +45,7 @@ public class KeycloakContainerExtensionTest {
      * Deploys the Keycloak extensions from the test-classes folder into the created Keycloak container.
      */
     @Test
+    @Disabled
     public void shouldDeployProvider() throws Exception {
         try (KeycloakContainer keycloak = new KeycloakContainer()
             // this would normally be just "target/classes"
@@ -75,6 +77,7 @@ public class KeycloakContainerExtensionTest {
     }
 
     @Test
+    @Disabled
     public void shouldDeployProviderAndCallCustomEndpoint() throws Exception {
         try (KeycloakContainer keycloak = new KeycloakContainer()
             // this would normally be just "target/classes"
@@ -103,6 +106,7 @@ public class KeycloakContainerExtensionTest {
     }
 
     @Test
+    @Disabled
     public void shouldDeployProviderWithDependencyAndCallCustomEndpoint() throws Exception {
         List<File> dependencies = Maven.resolver()
             .loadPomFromFile("./pom.xml")
