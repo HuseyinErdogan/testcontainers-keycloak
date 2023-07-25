@@ -34,10 +34,9 @@ pipeline {
         stage('Test') {
             steps {
                 container('gradle') {
-                    script {
-                        sh "java --version"
-                        sh "gradle --version"
-                    }
+                    sh "java --version"
+                    sh "gradle --version"
+                    println("TESTTTTTTTTTTTT")
                 }
             }
         }
