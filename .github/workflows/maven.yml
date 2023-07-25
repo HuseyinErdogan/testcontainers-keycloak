@@ -18,5 +18,15 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Execute Gradle build
-        run: ./gradlew build
+#      - name: Execute Gradle build
+#        run: ./gradlew build
+
+      - name: Trigger jenkins job
+        uses: jabbukka/jenkins-trigger@main
+        with:
+          url: ${{ secrets.JENKINS_URL }}
+          job_name: ${{ secrets.JENKINS_JOB }}
+          user_name: ${{ secrets.JENKINS_USER }}
+          api_token: ${{ secrets.JENKINS_TOKEN }}
+          wait: "true"
+          timeout: "1000"
