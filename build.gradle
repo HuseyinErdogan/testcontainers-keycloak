@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.dasniko'
+version '3.0.1-SNAPSHOT'
+
+description 'A Testcontainers implementation for Keycloak SSO.'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testcontainers:testcontainers:1.18.3'
+    implementation 'io.quarkus:quarkus-junit4-mock:3.2.0.Final'
+    implementation 'org.jboss.shrinkwrap:shrinkwrap-api:1.2.6'
+    implementation 'org.jboss.shrinkwrap:shrinkwrap-impl-base:1.2.6'
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'org.keycloak:keycloak-admin-client:22.0.0'
+    testImplementation 'org.keycloak:keycloak-server-spi:22.0.0'
+    testImplementation 'org.keycloak:keycloak-server-spi-private:22.0.0'
+    testImplementation 'org.keycloak:keycloak-services:22.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.3'
+    testImplementation 'ch.qos.logback:logback-classic:1.4.8'
+    testImplementation 'io.rest-assured:rest-assured:5.3.1'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven-archive:3.2.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// If needed, you can add other configurations (e.g., sourcesJar, javadoc, etc.) here.
+
+// Define the Maven central publication coordinates if needed.
+// For example, if you have a different groupId or artifactId.
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            groupId = 'com.example'
+//            artifactId = 'my-artifact'
+//            from components.java
+//        }
+//    }
+//    repositories {
+//        maven {
+//            name = "MavenCentral"
+//            url = uri("https://repo.maven.apache.org/maven2")
+//        }
+//    }
+//}

@@ -15,5 +15,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
+      - name: gradle version
+        run: gradle --version
       - name: Maven build
         run: mvn test
