@@ -1,5 +1,4 @@
-def pod =
-"""
+def pod = '''
 apiVersion: v1
 kind: Pod
 metadata:
@@ -19,7 +18,7 @@ spec:
       imagePullPolicy: Always
       tty: true
       command: ["cat"]
-"""
+'''
 
 pipeline {
     agent {
