@@ -30,9 +30,7 @@ pipeline {
         stage('Test') {
             steps {
                 container('gradle') {
-                    sh "java --version"
-                    sh "gradle --version"
-                    println("TESTTTTTTTTTTTT")
+                    sh "./gradlew build -x test "
                 }
             }
         }
