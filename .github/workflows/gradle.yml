@@ -14,19 +14,19 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: 'maven'
+          cache: 'gradle'
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-#      - name: Execute Gradle build
-#        run: ./gradlew build
+      - name: Execute Gradle build
+        run: ./gradlew build
 
-      - name: Trigger jenkins job
-        uses: jabbukka/jenkins-trigger@main
-        with:
-          url: ${{ secrets.JENKINS_URL }}
-          job_name: ${{ secrets.JENKINS_JOB }}
-          user_name: ${{ secrets.JENKINS_USER }}
-          api_token: ${{ secrets.JENKINS_TOKEN }}
-          wait: "true"
-          timeout: "1000"
+#      - name: Trigger jenkins job
+#        uses: jabbukka/jenkins-trigger@main
+#        with:
+#          url: ${{ secrets.JENKINS_URL }}
+#          job_name: ${{ secrets.JENKINS_JOB }}
+#          user_name: ${{ secrets.JENKINS_USER }}
+#          api_token: ${{ secrets.JENKINS_TOKEN }}
+#          wait: "true"
+#          timeout: "1000"
